@@ -35,7 +35,7 @@ def update_grade(request, format=None):
         grade = Grade.objects.get(student=student, project=project)
         
         # Only update grade if the new score is better than the previous one
-        if grade.score < score:
+        if grade.score < float(score):
             grade.objects.update(score=score)
             grade.save()
             
