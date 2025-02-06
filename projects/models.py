@@ -16,7 +16,7 @@ class Student(models.Model):
         return self.username
     
 
-class Grade:
+class Grade(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project')
     score = models.FloatField()
