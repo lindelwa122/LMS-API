@@ -20,6 +20,7 @@ class Grade(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='student')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project')
     score = models.FloatField(default=0)
+    last_submitted = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return f'{self.student} ({self.project}) = {self.score}'
