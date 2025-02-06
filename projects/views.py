@@ -14,7 +14,7 @@ def get_project(request, name, format=None):
         return Response({ 'error': 'Project not found.' }, status=status.HTTP_404_NOT_FOUND)
     
     serializer = ProjectSerializer(project)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
@@ -42,3 +42,5 @@ def update_grade(request, format=None):
     except ObjectDoesNotExist:
         grade = Grade.objects.create(student=student, project=project, score=score)
         grade.save()
+        
+    return Response({}, status=status.HTTP_200_OK)
