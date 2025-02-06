@@ -40,5 +40,5 @@ def update_grade(request, format=None):
             grade.save()
             
     except ObjectDoesNotExist:
-        grade = Grade.objects.get(student=student, project=project, score=score)
-        grade.score()
+        grade = Grade.objects.create(student=student, project=project, score=score)
+        grade.save()
