@@ -5,4 +5,7 @@ from .models import *
 
 admin.site.register(Project)
 admin.site.register(Student)
-admin.site.register(Grade)
+
+@admin.register(Grade)
+class GradeAdmin(admin.ModelAdmin):
+    readonly_fields = ('last_submitted',)
