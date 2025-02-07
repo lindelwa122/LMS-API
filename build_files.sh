@@ -9,4 +9,4 @@ echo "Migrating Database..."
 # python3 manage.py migrate --noinput
 
 echo "Collectiong static files..."
-python3 manage.py collectstatic --noinput
+# python3 manage.py collectstatic --noinput
